@@ -1,0 +1,40 @@
+a {
+
+    background-color: blue;
+    color: purple;
+}
+
+a:hover {
+    background-color: red;
+    color: white;
+    font-size: 22px;
+}
+header {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+article header {
+    text-align: center;
+    background-color: green;
+    color: black;
+}
+
+figcaption {
+
+
+    color:red;
+}
+#aviso {
+
+    background-color: #aa7983;
+}
+
+.producto {
+    background-color: #aac88f;
+}
+
+.algo{
+
+}
