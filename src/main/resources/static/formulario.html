@@ -1,0 +1,88 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header class='header'> 
+            <nav class>
+                <a href="index.html" class='nav-link logo'>TechShop</a>
+                <ul class='nav-menu'>
+                    <li class="nav-menu-item"><a class='nav-link nav-menu-link' href="ejemplo5.html">&LeftTriangleBar;</a> </li>
+                    <li class="nav-menu-item"><a class='nav-link nav-menu-link' href="ejemplo2.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class='nav-link nav-menu-link' href="Audios.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class='nav-link nav-menu-link' href="videos.html">Videos</a></li> 
+                    <li class="nav-menu-item"><a class='nav-link nav-menu-link' href="iframe.html">iFrames</a></li>
+                    <li class="nav-menu-item"><a class='nav-link nav-menu-link' href="formulario.html">Formularios</a></li>
+                </ul>
+
+            </nav>
+        </header>
+        <section>
+            <h2>Ejemplo de form</h2>
+
+
+            <h3>Informacion de registro</h3>
+            <form action="registro.jsp" method='post'>
+                <input type="hidden" name='iDCliente' value='123456789'/>
+                <label>Nombre comppleto</label>
+                <input type="text" name="Nombre" placeholder="Apellido1 Appleido 2 Nombre"/>
+                <br>
+
+                <br><label>Correo</label>
+                <input type="email"
+                       name="correo"
+                       placeholder="gary@gmail.com"/>
+                <br>
+
+                <br>
+                <label>Comida preferida</label><br>
+                Coreanea: <input type="checkbox"
+                                 name="Coreana"
+                                 /><br>
+                Argentina <input type="checkbox"
+                                 name="argentina"
+                                 /><br>
+                Italiana <input type="checkbox"
+                                name="italania"
+                                /><br>
+
+                <br><label>Fecha de cita</label>
+                <input type="date"
+                       name="cita"
+                       />
+
+                <br><label>Fecha de cita</label>
+                <input type="time"
+                       name="cita"
+                       /> <br>
+
+                <br><label>Foto</label>
+                <input type="file"
+                       name="foto"
+                       /> <br>
+
+                <br><label>Edad</label>
+                <input type="number"
+                       name="edad" min='18' max='35'/><br>
+
+                <br><label>Color preferido</label>
+               Azul <input type="radio" name='color' value='blue'/>
+                <br><label>Color preferido</label>
+               Rojo <input type="radio" name='color' value='Red'/>
+                <br><label>Color preferido</label>
+               Verde <input type="radio" name='color' value='green'/>
+                     
+               <br><label>Clave de ingreso</label>
+              <input type="password" name='clave' />
+               
+                <br>
+                <br>
+                <input type="submit" name="enviar" value="Registrar"/>
+            </form>
+        </section>
+    </body>
+</html>
