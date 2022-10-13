@@ -2,6 +2,7 @@ package com.tienda.controller;
 
 import com.tienda.domain.Cliente;
 import com.tienda.dao.ClienteDao;
+import com.tienda.service.ClienteService;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,8 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController {
 
     @Autowired
-    private ClienteDao clienteDao;
+    private ClienteService clienteService;
 
+    
     @GetMapping("/")
     public String inicio(Model model) {
         var texto = "Estamos en semana 4";
@@ -24,7 +26,7 @@ public class IndexController {
         Cliente cliente3 = new Cliente("Rebeca", "Perez Contreras", "rperes@gmail.com", "2552-4994");
 
         var clientes = Arrays.asList(cliente1, cliente2, cliente3);*/
-        var clientes = clienteDao.findAll();
+        var clientes = clienteService.getClientes();
         model.addAttribute("clientes", clientes);
         return "index";
     }
