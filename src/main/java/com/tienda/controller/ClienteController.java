@@ -1,9 +1,8 @@
 package com.tienda.controller;
 
 import com.tienda.domain.Cliente;
-import com.tienda.dao.ClienteDao;
 import com.tienda.service.ClienteService;
-import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +19,7 @@ public class ClienteController {
     public String inicio(Model model) {
 
         var clientes = clienteService.getClientes();
+        //var clientes = clienteService.getClientesPorApellido("Mena Loria");
         model.addAttribute("clientes", clientes);
         return "/cliente/listado";
     }
@@ -46,5 +46,18 @@ public class ClienteController {
     public String eliminarCliente(Cliente cliente) {
         clienteService.delete(cliente);
         return "redirect:/cliente/listado";
+    }
+
+    @GetMapping("/cliente/buscar")
+    public String buscarCliente(Cliente cliente) {
+        return "/cliente/busqueda";
+
+    }
+
+    @PostMapping("cliente/encontrarCliente")
+    public String encontrarCliente(Cliente cliente, Model model) {
+        cliente = clienteService.getClientesPorApellido(cliente.getApellidos());
+        model.addAttribute("cliente", cliente);
+        return "/cliente/modificar";
     }
 }
