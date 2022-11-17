@@ -3,6 +3,7 @@ package com.tienda.controller;
 import com.tienda.domain.Articulo;
 import com.tienda.dao.ArticuloDao;
 import com.tienda.service.ArticuloService;
+import com.tienda.service.CategoriaService;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,8 @@ public class ArticuloController {
 
     @Autowired
     private ArticuloService articuloService;
+    @Autowired
+    private CategoriaService categoriaService;
 
     @GetMapping("/articulo/listado")
     public String inicio(Model model) {
