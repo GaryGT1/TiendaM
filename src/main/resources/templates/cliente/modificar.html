@@ -1,51 +1,13 @@
 <html  xmlns:th="https://www.thymeleaf.org"
-       xmlns="https://www.w3.org/1999/xhtml"
+       xmlns="https://www.w3.org/1999/xhtml
+       xmlns:sec="https://www.thymeleaf.org/extras/spring-security""
        >
-
     <head>
         <title>TechShop</title>
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
-        <h2>[[#{cliente.datos}]]</h2>
-
-        <div class="contenido">
-            <a th:href="@{/cliente/listado}">[[#{accion.regresar}]]</a>
-            <hr/>
-            <form th:action="@{/cliente/guardar}"
-                  method="post"
-                  th:object="${cliente}">
-
-                <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
-
-                <label for="nombre ">[[#{cliente.nombre}]]</label>
-                <input type="text" name="Nombre" th:field="*{nombre}"/>
-                <br/>
-
-
-                <label for="apellidos">[[#{cliente.apellidos}]]</label>
-                <input type="text" name="apellidos" th:field="*{apellidos}"/>
-                <br/>
-
-
-                <label for="correo">[[#{cliente.correo}]]</label>
-                <input type="email" name="crreo" th:field="*{correo}"/>
-                <br/>
-
-
-                <label for="telefono">[[#{cliente.telefono}]]</label>
-                <input type="tel" name="telefono" th:field="*{telefono}"/>
-                <br/>
-
-                <label for="limite">[[#{cliente.limite}]]</label>
-                <input type="number" name="limite" th:field="*{credito.limite}"/>
-                <br/>
-
-                <button type="submit" th:text="#{accion.guardar}"/>
-        </div>
-        </form>
-
+        <section th:replace="cliente/fragmentosCliente :: editarCliente"/> 
         <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>

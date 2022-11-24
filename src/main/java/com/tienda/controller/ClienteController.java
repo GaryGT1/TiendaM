@@ -21,6 +21,12 @@ public class ClienteController {
         var clientes = clienteService.getClientes();
         //var clientes = clienteService.getClientesPorApellido("Mena Loria");
         model.addAttribute("clientes", clientes);
+        var limiteTotal = 0;
+        for (var c : clientes) {
+            limiteTotal += c.credito.limite;
+        }
+        model.addAttribute("limiteTotal", limiteTotal);
+        model.addAttribute("totalClientes", clientes.size());
         return "/cliente/listado";
     }
 
